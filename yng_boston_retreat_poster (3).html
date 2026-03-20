@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YNG Boston — Member Retreat NYC 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0d0d0d;
+    --card: #161616;
+    --white: #f2ede4;
+    --orange: #e8845a;
+    --green: #6dbf8f;
+    --gold: #d4a843;
+    --gold-light: #f0c96a;
+    --muted: #7a7570;
+    --border-white: rgba(242,237,228,0.12);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    min-height: 100vh;
+  }
+
+  .top-bar {
+    background: linear-gradient(90deg, var(--orange), var(--gold), var(--green));
+    padding: 10px 24px;
+    text-align: center;
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #0d0d0d;
+  }
+
+  .poster {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 56px 44px 80px;
+  }
+
+  .header-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 52px;
+  }
+
+  .chapter-label {
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 500;
+  }
+
+  .yng-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .yng-badge .box {
+    background: linear-gradient(135deg, var(--orange), var(--gold));
+    color: #0d0d0d;
+    font-size: 15px;
+    font-weight: 800;
+    padding: 5px 10px;
+    border-radius: 4px;
+    letter-spacing: 0.08em;
+  }
+
+  .yng-badge .sub {
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  .hero {
+    text-align: center;
+    margin-bottom: 44px;
+  }
+
+  .event-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 10px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 600;
+    margin-bottom: 22px;
+  }
+
+  .event-eyebrow::before,
+  .event-eyebrow::after {
+    content: '';
+    width: 28px;
+    height: 1px;
+    background: var(--gold);
+    opacity: 0.5;
+  }
+
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 96px;
+    font-weight: 300;
+    line-height: 0.88;
+    letter-spacing: -0.02em;
+    margin-bottom: 6px;
+  }
+
+  .word-retreat {
+    font-style: italic;
+    background: linear-gradient(90deg, var(--orange), var(--gold-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 21px;
+    color: var(--muted);
+    margin-top: 20px;
+    font-weight: 300;
+    letter-spacing: 0.03em;
+  }
+
+  .pillars {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+    margin: 40px 0;
+    padding: 20px 0;
+    border-top: 1px solid var(--border-white);
+    border-bottom: 1px solid var(--border-white);
+  }
+
+  .pillar {
+    flex: 1;
+    text-align: center;
+    font-size: 11.5px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  .pillar.c1 { color: var(--orange); }
+  .pillar.c2 { color: var(--green); }
+  .pillar.c3 { color: var(--white); }
+
+  .pillar-dot {
+    color: rgba(242,237,228,0.2);
+    font-size: 22px;
+    line-height: 1;
+    padding: 0 4px;
+  }
+
+  .info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 36px;
+    border: 1px solid var(--border-white);
+  }
+
+  .info-cell {
+    background: var(--card);
+    padding: 24px 16px;
+    text-align: center;
+    border-right: 1px solid var(--border-white);
+  }
+  .info-cell:last-child { border-right: none; }
+  .info-cell:nth-child(1) { border-top: 3px solid var(--orange); }
+  .info-cell:nth-child(2) { border-top: 3px solid var(--green); }
+  .info-cell:nth-child(3) { border-top: 3px solid var(--gold); }
+
+  .info-label {
+    font-size: 9px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+
+  .info-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 23px;
+    font-weight: 400;
+    line-height: 1.2;
+    color: var(--white);
+  }
+
+  .info-sub {
+    font-size: 10px;
+    color: var(--muted);
+    margin-top: 5px;
+    letter-spacing: 0.04em;
+    line-height: 1.4;
+  }
+
+  .age-notice {
+    background: var(--card);
+    border: 1px solid var(--border-white);
+    border-left: 3px solid var(--gold);
+    padding: 14px 20px;
+    border-radius: 0 6px 6px 0;
+    margin-bottom: 44px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .age-notice .icon { font-size: 18px; flex-shrink: 0; }
+
+  .age-notice p {
+    font-size: 12px;
+    line-height: 1.6;
+    color: rgba(242,237,228,0.8);
+  }
+
+  .age-notice strong { color: var(--gold-light); }
+
+  .section-label {
+    font-size: 9px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 22px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border-white);
+  }
+
+  .day-block {
+    margin-bottom: 16px;
+    background: var(--card);
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--border-white);
+  }
+
+  .day-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 18px 22px;
+    border-bottom: 1px solid var(--border-white);
+  }
+
+  .fri .day-header { background: rgba(232,132,90,0.07); }
+  .sat .day-header { background: rgba(109,191,143,0.07); }
+  .sun .day-header { background: rgba(212,168,67,0.07); }
+
+  .day-num {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 700;
+    flex-shrink: 0;
+    color: #0d0d0d;
+  }
+
+  .fri .day-num { background: var(--orange); }
+  .sat .day-num { background: var(--green); }
+  .sun .day-num { background: var(--gold); }
+
+  .day-title {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--white);
+  }
+
+  .day-date {
+    font-size: 10px;
+    color: var(--muted);
+    margin-top: 3px;
+    letter-spacing: 0.06em;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 18px 22px;
+  }
+
+  .tag {
+    background: rgba(242,237,228,0.04);
+    border: 1px solid var(--border-white);
+    color: rgba(242,237,228,0.82);
+    font-size: 11.5px;
+    padding: 7px 15px;
+    border-radius: 20px;
+    letter-spacing: 0.02em;
+  }
+
+  .fri .tag { border-color: rgba(232,132,90,0.22); }
+  .sat .tag { border-color: rgba(109,191,143,0.22); }
+  .sun .tag { border-color: rgba(212,168,67,0.22); }
+
+  .tag.highlight {
+    background: linear-gradient(135deg, rgba(212,168,67,0.18), rgba(232,132,90,0.12));
+    border-color: rgba(212,168,67,0.5);
+    color: var(--gold-light);
+    font-weight: 600;
+  }
+
+  .tag.optional {
+    opacity: 0.5;
+    font-style: italic;
+  }
+
+  .details-box {
+    background: var(--card);
+    border: 1px solid var(--border-white);
+    border-radius: 10px;
+    padding: 28px 32px;
+    margin: 12px 0 44px;
+  }
+
+  .details-box ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+  }
+
+  .details-box li {
+    font-size: 13px;
+    color: rgba(242,237,228,0.78);
+    display: flex;
+    gap: 12px;
+    line-height: 1.55;
+    align-items: flex-start;
+  }
+
+  .bullet {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    margin-top: 6px;
+    flex-shrink: 0;
+  }
+
+  .b1 { background: var(--gold); }
+  .b2 { background: var(--orange); }
+  .b3 { background: var(--muted); }
+  .b4 { background: var(--green); }
+  .b5 { background: var(--muted); }
+  .b6 { background: var(--orange); }
+
+  .cost-highlight {
+    color: var(--gold-light);
+    font-weight: 700;
+  }
+
+  .footer {
+    text-align: center;
+    margin-top: 52px;
+    padding-top: 36px;
+    border-top: 1px solid var(--border-white);
+  }
+
+  .footer-tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 28px;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+    margin-bottom: 20px;
+    background: linear-gradient(90deg, var(--orange), var(--gold-light), var(--green));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .footer-meta {
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    line-height: 2.2;
+    text-transform: uppercase;
+  }
+
+  .footer-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 28px;
+  }
+
+  .yng-box {
+    background: linear-gradient(135deg, var(--orange), var(--gold));
+    color: #0d0d0d;
+    font-size: 14px;
+    font-weight: 800;
+    padding: 6px 12px;
+    border-radius: 5px;
+    letter-spacing: 0.1em;
+  }
+
+  .yng-text {
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  .color-strip {
+    height: 3px;
+    background: linear-gradient(90deg, var(--orange), var(--gold), var(--green));
+    margin-top: 48px;
+    border-radius: 2px;
+    opacity: 0.5;
+  }
+
+  @media (max-width: 520px) {
+    .hero h1 { font-size: 68px; }
+    .info-grid { grid-template-columns: 1fr; }
+    .poster { padding: 36px 20px 60px; }
+    .header-row { flex-direction: column; gap: 12px; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  🔞 21+ Event Strictly &nbsp;·&nbsp; Valid Government-Issued Photo ID Required &nbsp;·&nbsp; No Exceptions
+</div>
+
+<div class="poster">
+
+  <div class="header-row">
+    <div class="chapter-label">YNG Boston · Member Retreat 2026</div>
+
+  </div>
+
+  <div class="hero">
+    <div class="event-eyebrow">First Ever Member Retreat</div>
+    <h1>
+      Member<br>
+      <span class="word-retreat">Retreat</span>
+    </h1>
+    <p class="hero-tagline">A weekend for the next generation</p>
+  </div>
+
+  <div class="pillars">
+    <div class="pillar c1">Culture</div>
+    <div class="pillar-dot">·</div>
+    <div class="pillar c2">Connection</div>
+    <div class="pillar-dot">·</div>
+    <div class="pillar c3">Community</div>
+  </div>
+
+  <div class="info-grid">
+    <div class="info-cell">
+      <div class="info-label">When</div>
+      <div class="info-value">April 10–12</div>
+      <div class="info-sub">Friday – Sunday, 2026</div>
+    </div>
+    <div class="info-cell">
+      <div class="info-label">Where</div>
+      <div class="info-value">NoMo SoHo</div>
+      <div class="info-sub">9 Crosby St, New York, NY 10013</div>
+    </div>
+    <div class="info-cell">
+      <div class="info-label">Cost</div>
+      <div class="info-value">$750</div>
+      <div class="info-sub">Per person · YNG Boston Members</div>
+    </div>
+  </div>
+
+  <div class="age-notice">
+    <div class="icon">🪪</div>
+    <p><strong>Strictly 21+ event.</strong> Valid government-issued photo ID is required at check-in and for all programming. Please plan accordingly — no exceptions will be made.</p>
+  </div>
+
+  <div class="section-label">Weekend at a Glance</div>
+
+  <div class="day-block fri">
+    <div class="day-header">
+      <div class="day-num">10</div>
+      <div>
+        <div class="day-title">Friday — Arrival &amp; Kickoff</div>
+        <div class="day-date">April 10, 2026</div>
+      </div>
+    </div>
+    <div class="tags">
+      <div class="tag">Hotel Check-In</div>
+      <div class="tag highlight">✦ Cross-Chapter Kickoff Dinner with YNG NYC</div>
+      <div class="tag">Icebreakers &amp; Introductions</div>
+      <div class="tag">Matchbox.ai Curated Seating</div>
+      <div class="tag">Birdland Jazz Club &amp; Theatre</div>
+      <div class="tag" style="font-weight:700;">Speakeasy Crawl</div>
+    </div>
+  </div>
+
+  <div class="day-block sat">
+    <div class="day-header">
+      <div class="day-num">11</div>
+      <div>
+        <div class="day-title">Saturday — The Main Event</div>
+        <div class="day-date">April 11, 2026</div>
+      </div>
+    </div>
+    <div class="tags">
+      <div class="tag">Micro Forum Experience</div>
+      <div class="tag">West Village / SoHo Food Tour</div>
+      <div class="tag">MoMA Museum Visit</div>
+      <div class="tag">Chelsea Art Gallery Walk</div>
+      <div class="tag highlight">✦ Keynote Dinner — YPO Member Daniel Koffler with YNG NYC</div>
+      <div class="tag">Rooftop Social — 230 Fifth</div>
+      <div class="tag optional">Late Night in NYC (Optional)</div>
+    </div>
+  </div>
+
+  <div class="day-block sun">
+    <div class="day-header">
+      <div class="day-num">12</div>
+      <div>
+        <div class="day-title">Sunday — Wind Down &amp; Depart</div>
+        <div class="day-date">April 12, 2026</div>
+      </div>
+    </div>
+    <div class="tags">
+      <div class="tag">Morning Yoga &amp; Mindfulness</div>
+      <div class="tag">Farewell Brunch</div>
+    </div>
+  </div>
+
+  <div style="height:20px"></div>
+
+  <div class="section-label">Registration Details</div>
+
+  <div class="details-box">
+    <ul>
+      <li><div class="bullet b1"></div><span><span class="cost-highlight">$750 per person</span> — covers hotel accommodation (2 nights at NoMo SoHo) and all event programming for April 10–12.</span></li>
+      <li><div class="bullet b2"></div><span>This retreat is open to <strong>YNG Boston members only.</strong></span></li>
+      <li><div class="bullet b3"></div><span>Travel to and from New York is your own responsibility.</span></li>
+      <li><div class="bullet b4"></div><span>Your spot is only confirmed once registration is complete <strong>AND</strong> payment is received.</span></li>
+      <li><div class="bullet b5"></div><span>A separate payment form will be sent to you once your registration is reviewed and confirmed.</span></li>
+      <li><div class="bullet b6"></div><span>Limited spots — <strong>first come, first served.</strong></span></li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    <div class="footer-tagline">A YNG Boston Member Retreat</div>
+    <div class="footer-meta">
+      Programmed &amp; organised by YNG Boston<br>
+      Featuring two joint dinners with YNG NYC<br>
+      Schedule is tentative and subject to change.<br>
+      Registration does not confirm attendance until payment is received.
+    </div>
+
+    <div class="color-strip"></div>
+  </div>
+
+</div>
+</body>
+</html>
